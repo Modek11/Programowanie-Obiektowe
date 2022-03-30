@@ -13,7 +13,7 @@ namespace Lab_2
 
         public override string ToString()
         {
-            return $"Teacher: {base.ToString()}";
+            return $"Teacher: {Name} ({Age} y.o.)";
         }
     }
 }

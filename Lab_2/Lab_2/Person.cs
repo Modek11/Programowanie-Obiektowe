@@ -6,25 +6,21 @@ namespace Lab_2
 {
     public class Person
     {
-        string Name { get; set; }
-        int Age { get; set; }
+        private string name;
+        private int age;
+        
+        public string Name { get => name; }
+        public int Age { get => age; }
 
         public Person(string name, int age)
         {
-            Age = age;
-            Name = name;
+            this.age = age;
+            this.name = name;
         }
 
-        public bool Equals(Person person)
+        public bool Equals(Person other)
         {
-            if(Name == person.Name && Age == person.Age)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Name == other.Name && Age == other.Age ? true : false;
         }
         public override string ToString()
         {

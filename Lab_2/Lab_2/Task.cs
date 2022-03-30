@@ -13,13 +13,16 @@ namespace Lab_2
     }
     class Task
     {
-        public string Name { get; set; }
-        public TaskStatus Status { get; set; }
+        private string name;
+        private TaskStatus status;
+        
+        public string Name { get => name; }
+        public TaskStatus Status { get => status; set => status = value; }
 
         public Task(string name, TaskStatus status)
         {
-            Name = name;
-            Status = status;
+            this.name = name;
+            this.status = status;
         }
 
         public override string ToString()
@@ -27,7 +30,7 @@ namespace Lab_2
             return base.ToString();
         }
 
-        bool Equals(Task other)
+        public bool Equals(Task other)
         {
             return Name == other.Name && Status == other.Status ? true : false;
         }
