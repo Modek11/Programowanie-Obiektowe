@@ -40,18 +40,20 @@ namespace Lab_2
 
         public string RenderTask(string prefix = "\t")
         {
-            return prefix;
+            string value = "";
+            foreach (Task t in tasks)
+            {
+                value += $"{prefix}{tasks.IndexOf(t) + 1}{t}";
+            }
+
+            return value;
         }
 
         public override string ToString()
         {
             string student = $"Student: {Name} ({Age} y.o.)\n";
             student += $"Group: {Group}\n";
-            student += $"Tasks:";
-            foreach(Task t in tasks)
-            {
-                student += $"\n\t{tasks.IndexOf(t)+1}. {t.Name} [{t.Status}]";
-            }
+            student += $"Tasks: {RenderTask("\n\t")}";
 
             return student;
         }

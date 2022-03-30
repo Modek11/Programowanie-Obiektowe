@@ -27,7 +27,7 @@ namespace Lab_2
 
         public override string ToString()
         {
-            return base.ToString();
+            return $". {Name} [{Status}]";
         }
 
         public bool Equals(Task other)
