@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab_3
 {
-    interface ILogger : IDisposable
+    public interface ILogger : IDisposable
     {
-        public void Log(params String[] messages)
-        {
-
-        }
+        void Log(params string[] messages);
     }
 }
