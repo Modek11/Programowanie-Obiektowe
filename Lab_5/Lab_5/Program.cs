@@ -6,6 +6,7 @@ namespace Lab_5
     {
         static void Main(string[] args)
         {
+            //https://dirask.com/snippets/cs/C%23+event+example
             Console.WriteLine("Hello World!");
         }
     }
