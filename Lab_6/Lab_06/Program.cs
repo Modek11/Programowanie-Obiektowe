@@ -148,11 +148,8 @@ namespace Lab_06
       var query16 = (
         from user in userList
         orderby user.CreatedAt
-        select new
-        {
-          Name = user.Name,
-          CreateDate = user.CreatedAt
-        }
+        group user by user.CreatedAt into user2
+        select user2
       );
 
       var query17 = (
@@ -234,7 +231,7 @@ namespace Lab_06
       Console.WriteLine($"{query15}, "); Console.WriteLine();
       
       Console.WriteLine("Query16:");
-      foreach(var x in query16) Console.WriteLine($"{x}, "); Console.WriteLine();
+      foreach(var x in query16) foreach(var y in x) y.Info(); Console.WriteLine();
       
       Console.WriteLine("Query17:");
       foreach(var x in query17) Console.WriteLine($"{x}, "); Console.WriteLine();
