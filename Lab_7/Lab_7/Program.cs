@@ -16,7 +16,7 @@ public class Program
         using (WypozyczalniaContext db = new WypozyczalniaContext(connectionString))
         {
             //Login(db);
-            Register(db);
+            //Register(db);
         }
     }
 

@@ -24,5 +24,23 @@ namespace Wypozyczalnia
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationWindow Navigate = new NavigationWindow();
+
+            Navigate.Navigate(new Uri("Page1.xaml",UriKind.Relative));
+
+
+            /*LoggedInWindow loggedInWindow = new LoggedInWindow();
+            loggedInWindow.Owner = this;
+            loggedInWindow.Show();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Owner = this;
+            mainWindow.Close();*/
+
+
+        }
     }
 }

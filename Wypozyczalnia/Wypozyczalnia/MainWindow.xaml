@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wypozyczalnia"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="#181735" Visibility="Visible">
     <Grid>
-        
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="0,86,0,0" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,50">
+                <TextBlock x:Name="Text_Logowanie" Text="Logowanie" Foreground="White" FontSize="20" FontWeight="Medium" TextAlignment="Left" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  />
+            </StackPanel>
+            <StackPanel>
+                <TextBox x:Name="email" Text="Email" FontWeight="Light" Background="Transparent" HorizontalAlignment="Center" FontSize="15" Foreground="White" BorderThickness="0" Width="235" Height="25" Opacity="0.5" Margin="0,0,0,51"/>
+
+            </StackPanel>
+            <StackPanel>
+                <PasswordBox x:Name="login_password" Password="Hasło" FontWeight="Light" Background="Transparent" HorizontalAlignment="Center" FontSize="15" Foreground="White" BorderThickness="0" Width="235" Height="25" Opacity="0.5"/>
+
+            </StackPanel>
+            <Button Content="Button" Margin="126,0,148,0" RenderTransformOrigin="0.502,2.954" Click="Button_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="0,86,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Rejestracja" Foreground="White" FontSize="20" FontWeight="Medium" TextAlignment="Left"  />
+            </StackPanel>
+            <StackPanel>
+
+
+            </StackPanel>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Margin="0,15,0,0" TextWrapping="Wrap" Text="MatiKar" TextAlignment="Center" VerticalAlignment="Top" Width="782" Grid.ColumnSpan="2" Foreground="White" FontSize="36"/>
     </Grid>
 </Window>
