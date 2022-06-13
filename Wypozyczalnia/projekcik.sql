@@ -42,6 +42,7 @@ CREATE TABLE [dbo].[Uzytkownicy](
 	[PESEL] [varchar](20) NOT NULL,
 	[NrTelefonu] [int] NOT NULL,
 	[Email] [varchar](30) NOT NULL,
+	[Haslo] [varchar](30) NOT NULL,
 	[LataPrawaJazdy] [smallint] NULL,
 	[CzyPracownik] [bit] NOT NULL
 	)
@@ -58,16 +59,16 @@ SET IDENTITY_INSERT [dbo].[KlasyPojazdow] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Uzytkownicy] ON 
 
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (1, N'Wojtek', N'Maciejewski', N'40101579294', 601385534, N'obopoteny@wp.pl', 15, 0)
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (2, N'Czes³aw', N'Kamiñski', N'40062849397', 789265944, N'Axel8@gmail.com', 20, 0)
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (3, N'Klementyna', N'Grabowska', N'94062979143', 666626146, N'Rixsa@op.pl', 8, 0)
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (4, N'Kazimiera', N'Olszewska', N'00211554024', 672004017, N'Demoin243@gmail.com', 5, 0)
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (5, N'Berta', N'Rutkowska', N'88112807263', 607971144, N'clon0854@wp.pl', 14, 0)
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (6, N'W³odzis³aw', N'Nowakowski', N'73100783614', 788471264, N'buslig245@op.pl', 2, 0)
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (7, N'Serafina', N'Maciejewska', N'59060456362', 881915360, N'DarkSmerh@spoko.pl', 44, 0)
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (8, N'Kasia', N'Kalinowska', N'44120166567', 516981586, N'Mihailka25@gmail.com', 25, 0)
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (9, N'Fryderyk', N'Czarnecki', N'56092951713', 673237247, N'Lorenanna@gmail.com', 16, 1)
-INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [LataPrawaJazdy], [CzyPracownik]) VALUES (10, N'Karolina', N'Czerwinska', N'02280776400', 791288651, N'hero555@gmail.com', 12, 1)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (1, N'Wojtek', N'Maciejewski', N'40101579294', 601385534, N'obopoteny@wp.pl', 'tajnehaslo123', 15, 0)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (2, N'Czes³aw', N'Kamiñski', N'40062849397', 789265944, N'Axel8@gmail.com', 'tajnehaslo123', 20, 0)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (3, N'Klementyna', N'Grabowska', N'94062979143', 666626146, N'Rixsa@op.pl', 'tajnehaslo123', 8, 0)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (4, N'Kazimiera', N'Olszewska', N'00211554024', 672004017, N'Demoin243@gmail.com', 'tajnehaslo123', 5, 0)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (5, N'Berta', N'Rutkowska', N'88112807263', 607971144, N'clon0854@wp.pl', 14, 'tajnehaslo123', 0)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (6, N'W³odzis³aw', N'Nowakowski', N'73100783614', 788471264, N'buslig245@op.pl', 'tajnehaslo123', 2, 0)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (7, N'Serafina', N'Maciejewska', N'59060456362', 881915360, N'DarkSmerh@spoko.pl', 'tajnehaslo123', 44, 0)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (8, N'Kasia', N'Kalinowska', N'44120166567', 516981586, N'Mihailka25@gmail.com', 'tajnehaslo123', 25, 0)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (9, N'Fryderyk', N'Czarnecki', N'56092951713', 673237247, N'Lorenanna@gmail.com', 'tajnehaslo123', 16, 1)
+INSERT [dbo].[Uzytkownicy] ([ID], [Imie], [Nazwisko], [PESEL], [NrTelefonu], [Email], [Haslo], [LataPrawaJazdy], [CzyPracownik]) VALUES (10, N'Karolina', N'Czerwinska', N'02280776400', 791288651, N'hero555@gmail.com', 'tajnehaslo123', 12, 1)
 SET IDENTITY_INSERT [dbo].[Uzytkownicy] OFF
 GO
 

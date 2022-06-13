@@ -1,14 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-public class BloggingContext : DbContext
+public class WypozyczalniaContext : DbContext
 {
-    public DbSet<Blog> Blogs { get; set; }
-    public DbSet<Post> Posts { get; set; }
+    public DbSet<KlasyPojazdow> KlasyPojazdow { get; set; }
+    public DbSet<Samochody> Samochody { get; set; }
+    public DbSet<Uzytkownicy> Uzytkownicy { get; set; }
+    public DbSet<Wypozyczone> Wypozyczone { get; set; }
 
     public string ConnectionString { get; }
 
-    public BloggingContext(string connectionString)
+    public WypozyczalniaContext(string connectionString)
     {
         this.ConnectionString = connectionString;
     }
@@ -19,20 +22,44 @@ public class BloggingContext : DbContext
     }
 }
 
-public class Blog
+public class KlasyPojazdow
 {
-    public long Id { get; set; }
-    public string Url { get; set; }
-
-    public List<Post> Posts { get; } = new();
+    public int Id { get; set; }
+    public string Klasa { get; set; }
+    public short LataPrawaJazdy { get; set; }
 }
 
-public class Post
+public class Samochody
 {
-    public long Id { get; set; }
-    public string Title { get; set; }
-    public string Content { get; set; }
+    public int Id { get; set; }
+    public int Id_KlasaPojazdu { get; set; }
+    public string Marka { get; set; }
+    public string Model { get; set; }
+    public string Generacja { get; set; }
+    public short Rocznik { get; set; }
+    public short MocKM { get; set; }
+    public decimal CenaDoba { get; set; }
+    public decimal CenaDlugoTerm { get; set; }
+}
 
-    public long BlogId { get; set; }
-    public Blog Blog { get; set; }
+public class Uzytkownicy
+{
+    public int Id { get; set; }
+    public string Imie { get; set; }
+    public string Nazwisko { get; set; }
+    public string Pesel { get; set; }
+    public int NrTelefonu { get; set; }
+    public string Email { get; set; }
+    public string Haslo { get; set; }
+    public short LataPrawaJazdy { get; set; }
+    public bool CzyPracownik { get; set; }
+}
+
+[Keyless]
+public class Wypozyczone
+{
+    public List<Samochody> Samochody { get; } = new();
+    public List<Uzytkownicy> Uzytkownicy { get; } = new();
+    public DateTime? DataOdbioru { get; set; }
+    public DateTime? DataZwrotu { get; set; }
 }
