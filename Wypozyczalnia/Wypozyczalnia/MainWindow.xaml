@@ -30,8 +30,8 @@ WindowStartupLocation="CenterScreen"
                 <TextBox Margin="0 50 0 0" x:Name="txtUsername" Width="300" FontSize="18" materialDesign:HintAssist.Hint="Wprowadź Email" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
                 <PasswordBox Margin="0 20 0 0" x:Name="txtPassword" Width="300" FontSize="18" materialDesign:HintAssist.Hint="Wprowadź Hasło" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
                 <Button Margin="0 20 0 0" x:Name="loginBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" FontSize="18" Width="300" materialDesign:ButtonAssist.CornerRadius="10" Content="Zaloguj" Click="loginBtn_Click"/>
-                <Button Margin="0 20 0 0" x:Name="registerBtn" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" FontSize="18" Width="300" materialDesign:ButtonAssist.CornerRadius="10" Content="Stwórz Konto"/>
-                <Button Margin="0 20 0 0" x:Name="forgotBtn" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" FontSize="18" Width="300" materialDesign:ButtonAssist.CornerRadius="10" Content="Zapomniałeś hasła?"/>
+                <Button Margin="0 20 0 0" x:Name="registerBtn" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" FontSize="18" Width="300" materialDesign:ButtonAssist.CornerRadius="10" Content="Stwórz Konto" Click="registerBtn_Click"/>
+                <Button Margin="0 20 0 0" x:Name="forgotBtn" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" FontSize="18" Width="300" materialDesign:ButtonAssist.CornerRadius="10" Content="Zapomniałeś hasła?" Click="forgotBtn_Click"/>
             </StackPanel>
         </materialDesign:DialogHost>
     </materialDesign:Card>
