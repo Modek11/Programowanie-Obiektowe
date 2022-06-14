@@ -20,6 +20,7 @@ namespace Wypozyczalnia
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -53,5 +54,36 @@ namespace Wypozyczalnia
             base.OnMouseLeftButtonDown(e);
             DragMove();
         }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            using (WypozyczalniaEntities db = new WypozyczalniaEntities())
+            {
+                //string insertedEmail = txtUsername.Text;
+                //string insertedPassword = txtPassword.Password;
+                string insertedEmail = txtUsername.Text;
+                string insertedPassword = txtPassword.Password;
+
+                foreach (var user in db.Uzytkownicy)
+                {
+                    if (insertedEmail == user.Email)
+                    {
+                        if (insertedPassword == user.Haslo)
+                        {
+                            infoText.Text = "Zalogowano poprawnie!";
+                            return;
+                        }
+                        else
+                        {
+                            infoText.Text = "Błędne hasło!";
+                            return;
+                        }
+                    }
+                }
+                infoText.Text = "Błędny email!";
+            }
+        }
+
+
     }
 }
