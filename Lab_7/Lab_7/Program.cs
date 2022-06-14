@@ -18,6 +18,7 @@ public class Program
             //TODO: catch null reference exception
             //Login(db);
             //Register(db);
+            UserChangePassword(db);
         }
     }
 
@@ -26,13 +27,13 @@ public class Program
         Console.Write("Podaj E-mail: ");
         string insertedEmail = Console.ReadLine().Trim();
         Console.Write("Podaj PESEL: ");
-        string insertedPESEL = Console.ReadLine().Trim();
+        string insertedPesel = Console.ReadLine().Trim();
         
         foreach (var user in db.Uzytkownicy)
         {
             if(insertedEmail == user.Email)
             {
-                if(insertedPESEL == user.Pesel)
+                if(insertedPesel == user.Pesel)
                 {
                     //TODO
                 }
@@ -47,7 +48,18 @@ public class Program
         string newPassword = Console.ReadLine().Trim();
         Console.Write("Powtórz hasło:");
         string newPasswordRepeat = Console.ReadLine().Trim();
-        
+
+        if (newPassword == newPasswordRepeat)
+        {
+            foreach (var user in db.Uzytkownicy)
+            {
+                if (user.Pesel == insertedPesel)
+                {
+                    user.Haslo = newPassword;
+                }
+            }
+        }
+        db.SaveChanges();
         //TODO
     }
     

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
+
 
 namespace Wypozyczalnia
 {
@@ -24,23 +26,32 @@ namespace Wypozyczalnia
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public bool isDarkTheme { get; set; }
+        private readonly PaletteHelper paletteHelper=new PaletteHelper();
+        private void toggleTheme(object sender, RoutedEventArgs e)
         {
-            NavigationWindow Navigate = new NavigationWindow();
+            ITheme theme = paletteHelper.GetTheme();
+            if(isDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                isDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                isDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+        }
 
-            Navigate.Navigate(new Uri("Page1.xaml",UriKind.Relative));
-
-
-            /*LoggedInWindow loggedInWindow = new LoggedInWindow();
-            loggedInWindow.Owner = this;
-            loggedInWindow.Show();
-
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Owner = this;
-            mainWindow.Close();*/
-
-
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
         }
     }
 }

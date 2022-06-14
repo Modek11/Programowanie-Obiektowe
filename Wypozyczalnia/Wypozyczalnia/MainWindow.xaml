@@ -3,45 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Wypozyczalnia"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        Background="#181735" Visibility="Visible">
-    <Grid>
+        Title="Login" Height="760" Width="450"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{x:Null}"
+AllowsTransparency="True"
+WindowStyle="None"
+WindowStartupLocation="CenterScreen"
+        >
 
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition>
-
-            </ColumnDefinition>
-            <ColumnDefinition>
-
-            </ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Margin="0,86,0,0" >
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,50">
-                <TextBlock x:Name="Text_Logowanie" Text="Logowanie" Foreground="White" FontSize="20" FontWeight="Medium" TextAlignment="Left" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  />
-            </StackPanel>
+    <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}" Margin="25">
+        <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost">
             <StackPanel>
-                <TextBox x:Name="email" Text="Email" FontWeight="Light" Background="Transparent" HorizontalAlignment="Center" FontSize="15" Foreground="White" BorderThickness="0" Width="235" Height="25" Opacity="0.5" Margin="0,0,0,51"/>
+                <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25">
+                    <StackPanel Margin="16 10 0 6" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock VerticalAlignment="Center" Text="Dark Mode"/>
+                        <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0" x:Name="themeToggle" IsChecked="{Binding IsDarkTheme}" Click="toggleTheme"/>
+                        <Button x:Name="btn_exit" ToolTip="Close application" Content="Wyjdź"  Click="exitApp"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
 
+                <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Text="Witaj Ponownie!"/>
+                <TextBlock  HorizontalAlignment="Center" FontSize="17" FontWeight="SemiBold" Text="Zaloguj się do istniejącego konta"/>
+                <TextBox Margin="0 50 0 0" x:Name="txtUsername" Width="300" FontSize="18" materialDesign:HintAssist.Hint="Wprowadź Email" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <PasswordBox Margin="0 20 0 0" x:Name="txtPassword" Width="300" FontSize="18" materialDesign:HintAssist.Hint="Wprowadź Hasło" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
+                <Button Margin="0 20 0 0" x:Name="loginBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" FontSize="18" Width="300" materialDesign:ButtonAssist.CornerRadius="10" Content="Zaloguj"/>
+                <Button Margin="0 20 0 0" x:Name="registerBtn" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" FontSize="18" Width="300" materialDesign:ButtonAssist.CornerRadius="10" Content="Stwórz Konto"/>
+                <Button Margin="0 20 0 0" x:Name="forgotBtn" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" FontSize="18" Width="300" materialDesign:ButtonAssist.CornerRadius="10" Content="Zapomniałeś hasła?"/>
             </StackPanel>
-            <StackPanel>
-                <PasswordBox x:Name="login_password" Password="Hasło" FontWeight="Light" Background="Transparent" HorizontalAlignment="Center" FontSize="15" Foreground="White" BorderThickness="0" Width="235" Height="25" Opacity="0.5"/>
-
-            </StackPanel>
-            <Button Content="Button" Margin="126,0,148,0" RenderTransformOrigin="0.502,2.954" Click="Button_Click"/>
-        </StackPanel>
-        <StackPanel Grid.Column="1" Margin="0,86,0,0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Rejestracja" Foreground="White" FontSize="20" FontWeight="Medium" TextAlignment="Left"  />
-            </StackPanel>
-            <StackPanel>
-
-
-            </StackPanel>
-        </StackPanel>
-        <TextBlock HorizontalAlignment="Left" Margin="0,15,0,0" TextWrapping="Wrap" Text="MatiKar" TextAlignment="Center" VerticalAlignment="Top" Width="782" Grid.ColumnSpan="2" Foreground="White" FontSize="36"/>
-    </Grid>
+        </materialDesign:DialogHost>
+    </materialDesign:Card>
 </Window>
