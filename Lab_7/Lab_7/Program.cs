@@ -15,23 +15,54 @@ public class Program
 
         using (WypozyczalniaContext db = new WypozyczalniaContext(connectionString))
         {
+            //TODO: catch null reference exception
             //Login(db);
             //Register(db);
         }
     }
 
+    public static void UserChangePassword(WypozyczalniaContext db)
+    {
+        Console.Write("Podaj E-mail: ");
+        string insertedEmail = Console.ReadLine().Trim();
+        Console.Write("Podaj PESEL: ");
+        string insertedPESEL = Console.ReadLine().Trim();
+        
+        foreach (var user in db.Uzytkownicy)
+        {
+            if(insertedEmail == user.Email)
+            {
+                if(insertedPESEL == user.Pesel)
+                {
+                    //TODO
+                }
+                else
+                {
+                    //TODO
+                }
+            }
+        }
+
+        Console.Write("Podaj nowe hasło:");
+        string newPassword = Console.ReadLine().Trim();
+        Console.Write("Powtórz hasło:");
+        string newPasswordRepeat = Console.ReadLine().Trim();
+        
+        //TODO
+    }
+    
     public static void Login(WypozyczalniaContext db)
     {
         Console.Write("Podaj E-mail: ");
         string insertedEmail = Console.ReadLine().Trim();
         Console.Write("Podaj hasło: ");
-        string insertedPassword = Console.ReadLine();
+        string insertedPassword = Console.ReadLine().Trim();
 
-        foreach (var email in db.Uzytkownicy)
+        foreach (var user in db.Uzytkownicy)
         {
-            if(insertedEmail == email.Email)
+            if(insertedEmail == user.Email)
             {
-                if(insertedPassword == email.Haslo)
+                if(insertedPassword == user.Haslo)
                 {
                     Console.WriteLine("Zalogowano!");
                     return;
@@ -60,11 +91,9 @@ public class Program
         Console.Write("Podaj PESEL: ");
         string insertedPESEL = Console.ReadLine().Trim();
         Console.Write("Podaj numer telefonu: ");
-        int insertedPhoneNumber = 0;
-        bool parsedPhoneNumber  = Int32.TryParse(Console.ReadLine().Trim(), out insertedPhoneNumber);
-        int insertedDrivingLicenseYears = 0;
-        bool parsedDrivingLicenseYears = Int32.TryParse(Console.ReadLine().Trim(), out insertedDrivingLicenseYears);
-
+        bool parsedPhoneNumber  = Int32.TryParse(Console.ReadLine().Trim(), out int insertedPhoneNumber);
+        bool parsedDrivingLicenseYears = short.TryParse(Console.ReadLine().Trim(), out short insertedDrivingLicenseYears);
+        
         if (!parsedPhoneNumber || !parsedDrivingLicenseYears)
         {
             Console.WriteLine("Podano złe liczby w formularzu!");
@@ -77,26 +106,26 @@ public class Program
             return;
         }
 
-        foreach (var x in db.Uzytkownicy)
+        foreach (var user in db.Uzytkownicy)
         {
-            if(insertedEmail == x.Email)
+            if(insertedEmail == user.Email)
             {
                 Console.WriteLine("Podany E-mail już istnieje!");
                 return;
             }
-            if(insertedPESEL == x.Pesel)
+            if(insertedPESEL == user.Pesel)
             {
                 Console.WriteLine("Podany PESEL już istnieje!");
                 return;
             }
-            if(insertedPhoneNumber == x.NrTelefonu)
+            if(insertedPhoneNumber == user.NrTelefonu)
             {
                 Console.WriteLine("Podany numer telefonu już istnieje!");
                 return;
             }
         }
 
-        db.Add(new Uzytkownicy { Imie = insertedName, Nazwisko = insertedSurname, Pesel = insertedPESEL, NrTelefonu = insertedPhoneNumber, Email = insertedEmail, Haslo = insertedPassword });
+        db.Add(new Uzytkownicy { Imie = insertedName, Nazwisko = insertedSurname, Pesel = insertedPESEL, NrTelefonu = insertedPhoneNumber, Email = insertedEmail, Haslo = insertedPassword, LataPrawaJazdy = insertedDrivingLicenseYears});
         db.SaveChanges();
         Console.WriteLine("Użytkownik został stworzony");
         
