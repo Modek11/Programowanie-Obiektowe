@@ -92,7 +92,7 @@ namespace Wypozyczalnia
 
         }
 
-        private void Register() //TODO
+        /*private void Register() //TODO
         {
             using (WypozyczalniaEntities db = new WypozyczalniaEntities())
             {
@@ -139,7 +139,7 @@ namespace Wypozyczalnia
                 db.SaveChanges();
                 Console.WriteLine("Użytkownik został stworzony");
             }
-        }
+        }*/
 
         private void forgotBtn_Click(object sender, RoutedEventArgs e)
         {
