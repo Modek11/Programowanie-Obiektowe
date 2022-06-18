@@ -1,0 +1,39 @@
+﻿<Window x:Class="Lab_9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_9"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1000" Width="800">
+    <Grid>
+        <Button x:Name="Text" Content="Text" HorizontalAlignment="Left" Margin="50,30,0,0" VerticalAlignment="Top" Click="Text_Click"/>
+        <Button x:Name="Bash" Content="Bash" HorizontalAlignment="Left" Margin="80,30,0,0" VerticalAlignment="Top" Click="Bash_Click"/>
+        <Button x:Name="cpp" Content="C++" HorizontalAlignment="Left" Margin="114,30,0,0" VerticalAlignment="Top" Click="cpp_Click"/>
+        <Button x:Name="cs" Content="C#" HorizontalAlignment="Left" Margin="147,30,0,0" VerticalAlignment="Top" Click="cs_Click"/>
+        <Button x:Name="java" Content="Java" HorizontalAlignment="Left" Margin="171,30,0,0" VerticalAlignment="Top" Click="java_Click"/>
+        <Button x:Name="css" Content="CSS" HorizontalAlignment="Left" Margin="202,30,0,0" VerticalAlignment="Top" Click="css_Click"/>
+        <Button x:Name="html" Content="HTML" HorizontalAlignment="Left" Margin="231,30,0,0" VerticalAlignment="Top" Click="html_Click"/>
+        <Button x:Name="javascript" Content="JavaScript" HorizontalAlignment="Left" Margin="271,30,0,0" VerticalAlignment="Top" Click="javascript_Click"/>
+        <Button x:Name="php" Content="PHP" HorizontalAlignment="Left" Margin="332,30,0,0" VerticalAlignment="Top" Click="php_Click"/>
+        <Button x:Name="python" Content="Python" HorizontalAlignment="Left" Margin="363,30,0,0" VerticalAlignment="Top" Click="python_Click"/>
+        <Button x:Name="sql" Content="SQL" HorizontalAlignment="Left" Margin="409,30,0,0" VerticalAlignment="Top" Click="sql_Click"/>
+
+        <Button x:Name="page1" Content="1" Width="20" HorizontalAlignment="Left" Margin="534,107,0,0" VerticalAlignment="Top" Click="page1_Click"/>
+        <Button x:Name="page2" Content="2" Width="20" HorizontalAlignment="Left" Margin="559,107,0,0" VerticalAlignment="Top" Click="page2_Click"/>
+        <Button x:Name="page3" Content="3" Width="20" HorizontalAlignment="Left" Margin="584,107,0,0" VerticalAlignment="Top" Click="page3_Click"/>
+        <Button x:Name="page4" Content="4" Width="20" HorizontalAlignment="Left" Margin="609,107,0,0" VerticalAlignment="Top" Click="page4_Click"/>
+        <Button x:Name="page5" Content="5" Width="20" HorizontalAlignment="Left" Margin="634,107,0,0" VerticalAlignment="Top" Click="page5_Click"/>
+        <Button x:Name="page6" Content="6" Width="20" HorizontalAlignment="Left" Margin="659,107,0,0" VerticalAlignment="Top" Click="page6_Click"/>
+        <Button x:Name="page7" Content="7" Width="20" HorizontalAlignment="Left" Margin="684,107,0,0" VerticalAlignment="Top" Click="page7_Click"/>
+        <ComboBox x:Name="comboPageSize" Height="20" Width="60" HorizontalAlignment="Left" Margin="709,107,0,0" VerticalAlignment="Top" DataContextChanged="ComboBox_DataContextChanged" SelectionChanged="comboPageSize_SelectionChanged">
+            <ComboBoxItem>5</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">20</ComboBoxItem>
+            <ComboBoxItem>50</ComboBoxItem>
+            <ComboBoxItem>100</ComboBoxItem>
+        </ComboBox>
+
+        <DataGrid Name="dgSimple" Width="800" Height="800" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,145,0,0"></DataGrid>
+
+    </Grid>
+</Window>
